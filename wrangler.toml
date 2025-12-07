@@ -1,0 +1,36 @@
+name = "imagenew"
+main = "src/index.ts"
+compatibility_date = "2024-12-07"
+compatibility_flags = ["nodejs_compat"]
+
+# Static assets configuration
+# Files in ./public are served automatically before Worker code runs
+[assets]
+directory = "./public"
+
+[vars]
+# Optional settings; override in dashboard or with `--var`
+PUBLIC_BASE_URL = ""                 # e.g. https://cdn.example.com
+SIGNED_URL_TTL = "86400"              # seconds for signed URLs if PUBLIC_BASE_URL is empty
+ALLOWED_TOKENS = ""                   # comma-separated API tokens expected in Authorization/X-Api-Key
+ALLOWED_REFERERS = ""                 # comma-separated origins allowed to call the API
+PROMPT_BLACKLIST = ""                 # comma-separated banned substrings
+DEFAULT_MODEL = "black-forest-labs/FLUX.1-schnell-Free"
+MAX_PROMPT_LENGTH = "500"
+MAX_WIDTH = "2048"
+MAX_HEIGHT = "2048"
+MAX_INFLIGHT = "4"
+RATE_LIMIT = "30"                     # requests per window per token/IP
+RATE_WINDOW_SEC = "60"
+
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "imagenew-bucket"
+preview_bucket_name = "imagenew-bucket-preview"
+
+[env.production]
+name = "imagenew-prod"
+
+[[env.production.r2_buckets]]
+binding = "R2"
+bucket_name = "imagenew-bucket"
