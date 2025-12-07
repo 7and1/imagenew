@@ -7,13 +7,16 @@
  * Based on common use cases and social media formats
  */
 export const SIZE_PRESETS = [
+  // Default - Banner style (closest to 1000x600, must be multiple of 16)
+  { name: 'Banner (1008×608)', width: 1008, height: 608, category: 'landscape' },
+
   // Square
   { name: '1:1 Square (1024×1024)', width: 1024, height: 1024, category: 'square' },
 
   // Landscape
   { name: '16:9 Full HD (1920×1080)', width: 1920, height: 1080, category: 'landscape' },
   { name: '16:9 HD (1280×720)', width: 1280, height: 720, category: 'landscape' },
-  { name: '2:1 Banner (1000×500)', width: 1000, height: 500, category: 'landscape' },
+  { name: '2:1 Banner (1008×496)', width: 1008, height: 496, category: 'landscape' },
 
   // Portrait
   { name: '9:16 Full HD (1080×1920)', width: 1080, height: 1920, category: 'portrait' },
