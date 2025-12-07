@@ -7,8 +7,8 @@
  * Based on common use cases and social media formats
  */
 export const SIZE_PRESETS = [
-  // Default - Banner style (closest to 1000x600, must be multiple of 16)
-  { name: 'Banner (1008×608)', width: 1008, height: 608, category: 'landscape' },
+  // Default - 10:6 ratio with 1024 width (must be multiple of 16)
+  { name: '10:6 Banner (1024×608)', width: 1024, height: 608, category: 'landscape' },
 
   // Square
   { name: '1:1 Square (1024×1024)', width: 1024, height: 1024, category: 'square' },

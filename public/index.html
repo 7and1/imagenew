@@ -97,7 +97,7 @@
 
       <!-- Main Content -->
       <main class="main-content">
-        <div class="main-grid">
+        <div class="main-container">
           <!-- Generator Section -->
           <section class="generator-section">
             <h2 class="section-title">Generate Image</h2>
@@ -114,11 +114,18 @@
                 <p class="form-hint">Press Ctrl+Enter to generate</p>
               </div>
 
-              <div class="form-group">
-                <label for="size-select" class="form-label">Size</label>
-                <select id="size-select" class="form-select">
-                  <!-- Options populated by JS -->
-                </select>
+              <div class="form-row">
+                <div class="form-group form-group-flex">
+                  <label for="size-select" class="form-label">Size</label>
+                  <select id="size-select" class="form-select">
+                    <!-- Options populated by JS -->
+                  </select>
+                </div>
+
+                <button type="submit" id="generate-btn" class="btn btn-primary">
+                  <span class="btn-spinner spinner hidden"></span>
+                  <span class="btn-text">Generate</span>
+                </button>
               </div>
 
               <!-- Advanced Options -->
@@ -151,21 +158,16 @@
                   <p class="form-hint">Use the same seed to reproduce results</p>
                 </div>
               </div>
-
-              <button type="submit" id="generate-btn" class="btn btn-primary btn-block">
-                <span class="btn-spinner spinner hidden"></span>
-                <span class="btn-text">Generate</span>
-              </button>
             </form>
 
             <!-- Result Container -->
             <div id="result-container" class="hidden"></div>
           </section>
 
-          <!-- Gallery Section -->
+          <!-- Gallery Section - Below Generator -->
           <section class="gallery-section">
             <div class="gallery-header">
-              <h2 class="section-title">Recent Images</h2>
+              <h2 class="section-title">Recent Images (R2 Storage)</h2>
 
               <div class="gallery-nav">
                 <button type="button" id="gallery-prev" class="btn btn-secondary" disabled>
